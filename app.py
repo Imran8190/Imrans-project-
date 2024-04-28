@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
@@ -34,7 +34,10 @@ CHAINS = [
 def bismillah():
     return render_template('home.html', 
  chains=CHAINS,company_name='NEW ROYAL GOLD COVERING')
+@app.route("/api/chains")
 
+def bismilla():
+    return jsonify(CHAINS)
 
 if (__name__)=="__main__":
   app.run(host='0.0.0.0',debug=True)
